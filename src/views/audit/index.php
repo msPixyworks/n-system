@@ -16,7 +16,7 @@
  * - 詳細（差分）に email_masked / reason / blocked_until 等が出る想定
  *
  * 追加（要望反映）:
- * - 一覧表示から「UA」と「種別」は不要（DataTables列もそれに合わせる）
+ * - 一覧表示から「UA」と「種別」は不要（DataTables列もそれに合わせる）。
  *   ※列定義は /public/js/auditLog.js 側で調整済み前提
  *
  * 追加（今回）:
