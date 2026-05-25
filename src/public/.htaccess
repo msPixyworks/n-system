@@ -1,0 +1,29 @@
+# Front Controller routing
+RewriteEngine On
+
+# 既存のファイル/ディレクトリはそのまま配信
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# それ以外は index.php へ
+RewriteRule ^ index.php [QSA,L]
+
+# ------------------------------------------------------------
+# CSP対応（zipcloud）
+# ------------------------------------------------------------
+# 注意:
+# - n-system では Content-Security-Policy は vhost.conf 側で一元管理する
+# - .htaccess での CSP 設定は「参考・履歴」として残す
+# - 二重定義を避けるため、Header set は無効化している
+#
+# <IfModule mod_headers.c>
+# Header always set Content-Security-Policy "\
+# default-src 'self'; \
+# script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://code.jquery.com https://cdnjs.cloudflare.com; \
+# style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; \
+# font-src 'self' https://fonts.gstatic.com; \
+# img-src 'self' data: blob: https://cdn.jsdelivr.net; \
+# connect-src 'self' https://zipcloud.ibsnet.co.jp https://cdn.jsdelivr.net; \
+# "
+# </IfModule>

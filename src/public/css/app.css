@@ -1,0 +1,4 @@
+.form-error {
+  color: #d63384; /* Bootstrap danger-ish */
+  font-size: 0.9rem;
+}

@@ -1,0 +1,897 @@
+@charset "utf-8";
+
+/*
+------------
+custom.css
+------------
+*/
+
+/* format */
+:root {
+    --key_color: #42a5a2;
+    --bs-danger-text-emphasis: #a94442;
+    --bs-danger-bg-subtle: #f2dede;
+    --bs-danger-border-subtle: #ebccd1;
+    --bs-success-text-emphasis: #3c763d;
+    --bs-success-bg-subtle: #dff0d8;
+    --bs-success-border-subtle: #d6e9c6;
+    --bs-body-color: #4d4d4d;
+    --bs-border-color: #e8e8e8;
+    --bs-form-check-bg: #fff;
+
+    /* k-ui tokens（全体統一の基準） */
+    --k-radius-card: 20px;
+    --k-radius-input: 6px;
+    --k-radius-textarea: 10px;
+    --k-shadow: 0 0 10px 0 rgba(0, 0, 0, .05);
+    --k-card-border: 1px solid var(--bs-border-color);
+    --k-pad-card-header: 14px 18px;
+    --k-pad-card-body: 18px;
+    --k-font-base: 1.45rem;
+    --k-font-muted: 1.25rem;
+    --k-line-base: 1.6;
+    --k-letter-base: 0.02em;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, li, dl, pre, form,
+blockquote, fieldset, input, address, figure, figcaption,
+dl, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+
+.bg-danger {
+    background-color: #ed1e79 !important;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #f1f4f7;
+    font-size: 1rem;
+    color: #4d4d4d;
+    line-height: 1;
+    width: 100%;
+    position: relative;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+/* shadow */
+.shadow {
+    box-shadow: var(--k-shadow) !important;
+}
+
+/* bord */
+.bord {
+    background-color: #fff;
+    border-radius: var(--k-radius-card);
+}
+
+/* alert */
+.alert {
+    padding: 15px;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+}
+
+/* form-control */
+.form-control {
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    padding: 10px 20px;
+    box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, .03);
+    border-radius: var(--k-radius-input);
+}
+.form-control:focus {
+    outline: none;
+    border-color: var(--key_color);
+    background-color: #f7f7f7;
+    box-shadow: none;
+}
+textarea.form-control {
+    border-radius: var(--k-radius-textarea);
+}
+input[type="file"].form-control {
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+}
+span#fileName {
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    margin: 0 0 0 5px;
+}
+
+.form-check_list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.form-check {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+.form-check-input[type=checkbox] {
+    border-radius: 2px;
+}
+.form-check .form-check-input {
+    float: none;
+    margin-left: -1.5em;
+}
+.form-check-input {
+    --bs-form-check-bg: var(--bs-body-bg);
+    width: 1.5em;
+    height: 1.5em;
+    margin-top: 0;
+    vertical-align: top;
+    background-color: var(--bs-form-check-bg);
+    border: 1px solid var(--bs-border-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    print-color-adjust: exact;
+}
+.form-check-input:checked {
+    background-color: var(--key_color);
+    border-color: var(--key_color);
+    box-shadow: none;
+}
+
+.form-select {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, .03);
+}
+.form-select:focus {
+    outline: none;
+    border-color: var(--key_color);
+    background-color: #f7f7f7;
+    box-shadow: none;
+}
+.form-control:read-only {
+    background-color: #ebebeb;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+@media (max-width: 768px) {
+    .form-control,
+    .form-select {
+        font-size: 1.4rem;
+    }
+}
+
+/* btn */
+.btn {
+    --bs-btn-padding-x: 40px;
+    --bs-btn-padding-y: 10px;
+    --bs-btn-font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    --bs-btn-line-height: 1;
+    --bs-btn-border-radius: 300px;
+}
+.btn-primary {
+    --bs-btn-bg: #42a5a2;
+    --bs-btn-border-color: #42a5a2;
+    --bs-btn-hover-color: #42a5a2;
+    --bs-btn-hover-bg: #fff;
+    --bs-btn-hover-border-color: #42a5a2;
+    --bs-btn-active-bg: #42a5a2;
+    --bs-btn-active-border-color: #42a5a2;
+    --bs-btn-disabled-bg: #42a5a2;
+    --bs-btn-disabled-border-color: #42a5a2;
+}
+
+/* login_card */
+.login_card {
+    width: 90vw;
+    max-width: 600px;
+    margin: 100px auto 0 auto;
+    padding: 65px 40px;
+}
+.login_card h1 {
+    width: 144px;
+    margin: 0 auto;
+}
+.login_card .message_area {
+    margin: 65px 0 0 0;
+}
+.login_card #loginForm {
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+.login_card #loginForm button {
+    margin: 20px 0 0 0;
+}
+
+/* header */
+header {
+    width: 100%;
+    height: 100px;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+header h1 {
+    width: 144px;
+}
+header .notification_area a {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    color: var(--key_color);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease;
+}
+header .notification_area i {
+    font-size: 20px;
+    line-height: 1;
+}
+header .notification_area span {
+    background-color: #ed1e79;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+}
+header .notification_area a:hover {
+    background-color: var(--key_color);
+    color: #fff;
+}
+header .hamburger {
+    width: 36px;
+    height: 28px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: transparent;
+    border: 0;
+    padding: 0;
+}
+header .hamburger > span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: currentColor;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0 5vw;
+        height: 80px;
+    }
+    header h1 {
+        width: calc(100vw * 200 / 750);
+    }
+    header .notification_area a {
+        width: 30px;
+        height: 30px;
+    }
+    header .notification_area i {
+        font-size: 16px;
+    }
+    header .hamburger {
+        width: 30px;
+        height: 24px;
+    }
+}
+
+/* ============================================================
+   2カラム（sidebar + main）
+   ============================================================ */
+.content_area {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* ★mainが落ちない */
+    align-items: stretch;
+    padding: 0 30px 30px 30px;
+}
+
+/* sidebar */
+.content_area #sidebar {
+    background-color: var(--key_color) !important;
+    border-radius: 20px;
+    flex: 0 0 220px;
+    max-width: 220px;
+}
+
+.content_area nav {
+    width: 220px;
+    height: 100%;
+    padding: 30px 20px;
+}
+
+/* nav links */
+.content_area nav a {
+    color: #fff;
+    text-decoration: none;
+}
+.content_area nav p.dashboard {
+    margin: 0 0 20px 0;
+    padding: 0 10px;
+}
+.content_area nav p.logout {
+    margin: 65px 0 0 0;
+    padding: 0 10px;
+}
+.content_area nav p.dashboard a,
+.content_area nav p.logout a {
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 5px;
+    transition: all .3s ease;
+}
+.content_area nav p.dashboard a i,
+.content_area nav p.logout a i {
+    font-size: 1.6rem;
+}
+.content_area nav p.dashboard a:hover,
+.content_area nav p.logout a:hover {
+    opacity: .6;
+}
+.content_area nav p.menu_link {
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+.content_area nav p.menu_link a {
+    display: block;
+    position: relative;
+    border-bottom: 1px solid #fff;
+    padding: 10px;
+    transition: all .3s ease;
+}
+.content_area nav p.menu_link a:hover {
+    background-color: #fff;
+    color: var(--key_color);
+}
+.content_area nav p.menu_link a i {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
+
+/* main */
+.content_area main {
+    flex-grow: 1;
+    margin: 0 0 0 30px;
+    min-width: 0; /* ★中身が長くても落ちない */
+}
+
+/* PC幅では offcanvas を通常ブロック化 */
+@media (min-width: 992px) {
+    #sidebar.offcanvas-lg {
+        position: static !important;
+        transform: none !important;
+        visibility: visible !important;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        width: 220px;
+    }
+    #sidebar .offcanvas-header { display: none; }
+    #sidebar .offcanvas-body { padding: 0; }
+}
+
+/* モバイルでは offcanvas */
+@media (max-width: 991px) {
+    .content_area {
+        display: block;
+    }
+    .content_area #sidebar {
+        border-radius: 0;
+        max-width: none;
+    }
+    .content_area main {
+        margin: 0;
+    }
+    .offcanvas, .offcanvas-lg, .offcanvas-md, .offcanvas-sm, .offcanvas-xl, .offcanvas-xxl {
+        --bs-offcanvas-width: auto;
+        --bs-offcanvas-height: 199vh;
+        --bs-offcanvas-padding-x: 0;
+        --bs-offcanvas-padding-y: 0;
+        --bs-offcanvas-box-shadow: none;
+        --bs-offcanvas-border-color: transparent;
+    }
+}
+
+@media (max-width: 768px) {
+    .content_area {
+        padding: 0 5vw 25px 5vw;
+    }
+}
+
+/* copyright */
+p.copyright {
+    margin: 65px 0 0 0;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    text-align: right;
+}
+@media (max-width: 768px) {
+    p.copyright {
+        margin: 45px 0 0 0;
+        text-align: center;
+    }
+}
+
+/* modal */
+.modal-header {
+    padding: 20px;
+    border-bottom: none;
+}
+.modal-header h5 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+.modal-header .btn-close {
+    padding: 0;
+    margin: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: 1.5rem;
+    --bs-btn-close-opacity: 1;
+    --bs-btn-close-hover-opacity: 0.6;
+}
+.modal-body {
+    padding: 0 20px;
+    margin: 20px 0 0 0;
+}
+.modal-footer {
+    justify-content: center;
+    padding: 20px 0 40px 0;
+    border-top: none;
+}
+
+/* datatable-class */
+.datatable-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.datatable-origin {
+    font-size: 14px;
+    vertical-align: middle;
+    width: max-content;
+    min-width: 100%;
+    table-layout: fixed;
+}
+
+/* ============================================================
+   k-ui（全体共通）
+   ============================================================ */
+.k-page {
+    font-size: var(--k-font-base);
+    letter-spacing: var(--k-letter-base);
+    line-height: var(--k-line-base);
+}
+.k-page .text-muted,
+.k-page .k-muted {
+    font-size: var(--k-font-muted);
+    line-height: 1.4;
+}
+.k-page__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+.k-page__title {
+    font-size: 2.0rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+}
+.k-page__sub {
+    margin-top: 6px;
+    color: #6c757d;
+    font-size: var(--k-font-muted);
+    line-height: 1.4;
+}
+
+/* カード */
+.k-card {
+    background: #fff;
+    border-radius: var(--k-radius-card);
+    box-shadow: var(--k-shadow);
+    border: var(--k-card-border);
+    overflow: hidden;
+}
+
+/* ★カードヘッダーは緑＋白文字 */
+.k-card__header {
+    background: var(--key_color);
+    color: #fff;
+    padding: var(--k-pad-card-header);
+    border-bottom: none;
+}
+.k-card__header .k-section-title,
+.k-card__header .k-section-sub,
+.k-card__header .text-muted {
+    color: #fff !important;
+    opacity: 0.92;
+}
+
+.k-card__body {
+    padding: var(--k-pad-card-body);
+}
+
+.k-section-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+}
+.k-section-sub {
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+/* ============================================================
+   ★全フォーム統一：ラベル装飾（画像っぽいデザイン）
+   - k-page 内の .form-label に自動適用
+   - checkbox/radio 用の .form-check-label は除外
+   ============================================================ */
+.k-page .form-label:not(.form-check-label) {
+    position: relative;
+    display: inline-block;
+    padding-left: 12px;
+    margin-bottom: 6px;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    /* color: var(--bs-body-color); */
+}
+
+/* 左アクセント */
+.k-page .form-label:not(.form-check-label)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    width: 3px;
+    height: 1em;
+    background: var(--key_color);
+    border-radius: 2px;
+}
+
+/* 下ライン（ラベル幅＝テキスト幅に合わせる） */
+.k-page .form-label:not(.form-check-label)::after {
+    content: "";
+    display: block;
+    margin-top: 6px;
+    height: 2px;
+    width: 100%;
+    /* background: #e5e5e5; */
+}
+
+/* 必須 * はそのまま赤（レイアウト崩れ防止） */
+.k-page .form-label .text-danger {
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================================
+   k-filter（一覧絞り込み専用：高さ統一＆ボタン小型化）
+   ============================================================ */
+.k-filter .form-control,
+.k-filter .form-select {
+    padding: 9px 16px;
+    font-size: 1.4rem;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    border-radius: 10px;
+    height: 42px;
+}
+.k-filter textarea.form-control {
+    height: auto;
+}
+.k-filter .form-select {
+    background-position: right 12px center;
+    padding-right: 42px;
+}
+.k-btn-filter.btn,
+.k-filter .btn.k-btn-filter {
+    --bs-btn-padding-x: 18px;
+    --bs-btn-padding-y: 8px;
+    --bs-btn-font-size: 1.3rem;
+    --bs-btn-border-radius: 999px;
+    letter-spacing: 0.04em;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .k-filter .form-control,
+    .k-filter .form-select {
+        height: 44px;
+        font-size: 1.4rem;
+    }
+    .k-btn-filter.btn,
+    .k-filter .btn.k-btn-filter {
+        --bs-btn-padding-x: 18px;
+        --bs-btn-padding-y: 10px;
+        --bs-btn-font-size: 1.3rem;
+    }
+}
+
+/* ============================================================
+   DataTables（共通：k-dt）
+   ============================================================ */
+.k-dt .dataTables_wrapper {
+    font-size: 1.35rem;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+}
+.k-dt .dataTables_wrapper .row {
+    align-items: center;
+    gap: 10px;
+}
+.k-dt .dataTables_wrapper .dataTables_length,
+.k-dt .dataTables_wrapper .dataTables_filter {
+    margin: 6px 0;
+}
+.k-dt .dataTables_wrapper .dataTables_filter label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.k-dt .dataTables_wrapper .dataTables_filter input {
+    font-size: 1.4rem;
+    padding: 8px 14px;
+    border-radius: 6px;
+    box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, .03);
+}
+.k-dt .dataTables_wrapper .dataTables_length select {
+    font-size: 1.4rem;
+    padding: 6px 12px;
+    box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, .03);
+}
+.k-dt table.dataTable thead th {
+    color: rgb(66, 165, 162);
+}
+.k-dt .dataTables_wrapper .page-link {
+    font-size: 1.3rem;
+    padding: 6px 12px;
+}
+
+/* テーブル見出し/セル（共通） */
+.k-table thead th,
+table.dataTable thead th {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--bs-border-color) !important;
+    white-space: nowrap;
+}
+.k-table tbody td,
+table.dataTable tbody td {
+    font-size: 1.35rem;
+    padding: 12px;
+    border-top: 1px solid var(--bs-border-color) !important;
+    vertical-align: middle;
+}
+
+/* 操作列ボタン（共通） */
+.k-dt table.dataTable .btn.btn-sm {
+    --bs-btn-padding-x: 16px;
+    --bs-btn-padding-y: 8px;
+    --bs-btn-font-size: 1.2rem;
+    --bs-btn-border-radius: 999px;
+    letter-spacing: 0.04em;
+}
+.k-dt table.dataTable .btn:not(.btn-sm) {
+    --bs-btn-padding-x: 18px;
+    --bs-btn-padding-y: 8px;
+    --bs-btn-font-size: 1.3rem;
+    --bs-btn-border-radius: 999px;
+}
+.k-dt table.dataTable .btn i { margin-right: 6px; }
+.k-dt table.dataTable .btn i:only-child { margin-right: 0; }
+
+/* ============================================================
+   show table（th/td ×2セット）: th=薄緑 / 罫線=白
+   ============================================================ */
+.k-show-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.k-show-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.k-show-table th,
+.k-show-table td {
+  border: 2px solid #fff;     /* ★罫線は全部白 */
+  padding: 10px 12px;
+  vertical-align: middle;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.k-show-table th {
+  background: #eaf6f5;        /* ★指定どおり */
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.k-show-table td {
+  background: #fff;
+  word-break: break-word;
+}
+
+/* pre（長文） */
+.k-show-table td pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* 列幅（thを広めに、値も確保） */
+.k-show-table th { width: 22%; }
+.k-show-table td { width: 28%; }
+
+/* 4列がきつい幅ではスクロールで崩れないように */
+@media (max-width: 768px) {
+  .k-show-table {
+    min-width: 720px;
+  }
+}
+
+/* ============================================================
+   ボタン統一（削除系・リセット除外）※有効版
+   - k-page 配下のボタンを「新規登録」と同じデザインに
+   - 除外：削除系 / リセット / btn-close
+   ============================================================ */
+
+.k-page .btn:not(.btn-close):not(.btn-outline-danger):not(.btn-danger):not(.btn-reset):not(.js-reset):not([data-role="reset"]):not([id$="reset"]):not([id$="-reset"]) {
+  background-color: var(--key_color) !important;
+  border-color: var(--key_color) !important;
+  color: #fff !important;
+}
+
+.k-page .btn:not(.btn-close):not(.btn-outline-danger):not(.btn-danger):not(.btn-reset):not(.js-reset):not([data-role="reset"]):not([id$="reset"]):not([id$="-reset"]):hover {
+  background-color: #fff !important;
+  color: var(--key_color) !important;
+  border-color: var(--key_color) !important;
+}
+
+.k-page .btn:not(.btn-close):not(.btn-outline-danger):not(.btn-danger):not(.btn-reset):not(.js-reset):not([data-role="reset"]):not([id$="reset"]):not([id$="-reset"]):active,
+.k-page .btn:not(.btn-close):not(.btn-outline-danger):not(.btn-danger):not(.btn-reset):not(.js-reset):not([data-role="reset"]):not([id$="reset"]):not([id$="-reset"]):focus {
+  background-color: var(--key_color) !important;
+  border-color: var(--key_color) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+/* ============================================================
+   削除ボタン：通常は塗り（赤）／hoverで枠だけ
+   対象：btn-outline-danger（既存HTMLを変えない）
+   ============================================================ */
+
+.k-page .btn.btn-outline-danger {
+  background-color: #dc3545 !important; /* Bootstrap danger相当 */
+  border-color: #dc3545 !important;
+  color: #fff !important;
+}
+
+.k-page .btn.btn-outline-danger:hover {
+  background-color: #fff !important;
+  border-color: #dc3545 !important;
+  color: #dc3545 !important;
+}
+
+.k-page .btn.btn-outline-danger:active,
+.k-page .btn.btn-outline-danger:focus {
+  box-shadow: none !important;
+}
+
+/* ============================================================
+   右上アクション（k-page__header内のボタン）を小さく
+   ============================================================ */
+
+.k-page .k-page__header .btn:not(.btn-close) {
+  --bs-btn-padding-x: 22px;
+  --bs-btn-padding-y: 8px;
+  --bs-btn-font-size: 1.35rem;
+  --bs-btn-border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+/* アイコン付きがあれば余白を少し詰める（任意） */
+.k-page .k-page__header .btn i {
+  margin-right: 6px;
+}
+.k-page .k-page__header .btn i:only-child {
+  margin-right: 0;
+}
+
+/* lessee-jump：入力欄センターに合わせる微調整（ボタン高さは変えない） */
+#lessee-jump .col-md-4.d-flex { margin-top: 10px; }
+
+/* ============================================================
+   ログアウトボタン（サイドバー専用）
+   ============================================================ */
+
+.btn-logout {
+    background-color: #fff;
+    border: 2px solid #fff;
+    color: var(--key_color);
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-radius: 999px;
+    padding: 10px 0;
+    letter-spacing: 0.05em;
+    transition: all .2s ease;
+}
+
+.btn-logout:hover {
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-logout:active,
+.btn-logout:focus {
+    box-shadow: none;
+}
+
+/* ============================================================
+   操作列調整
+   ============================================================ */
+.k-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.k-row-actions .dropdown-menu {
+  min-width: 180px;
+}

@@ -1,0 +1,56 @@
+services:
+  web:
+    build:
+      context: ./docker/php
+      network: host
+    container_name: nsystem-web
+    ports:
+      - "8080:80"
+    volumes:
+      # アプリ本体
+      - ./src:/var/www/html
+
+      # Apache vhost
+      - ./docker/apache/vhost.conf:/etc/apache2/sites-enabled/000-default.conf
+
+      # Apacheログをホストへ退避（ErrorLog/CustomLogがここに出る）
+      - /home/mspix/n-system/error_log:/var/log/apache2
+
+    environment:
+      APP_ENV: local
+      DB_HOST: db
+      DB_DATABASE: nsystem
+      DB_USERNAME: nsystem
+      DB_PASSWORD: nsystempass
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:11.4
+    container_name: nsystem-db
+    environment:
+      MARIADB_DATABASE: nsystem
+      MARIADB_USER: nsystem
+      MARIADB_PASSWORD: nsystempass
+      MARIADB_ROOT_PASSWORD: rootpass
+    ports:
+      - "3307:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./src/sql/init.sql:/docker-entrypoint-initdb.d/00-init.sql:ro
+      - ./docker/mariadb/my.cnf:/etc/mysql/conf.d/my.cnf:ro
+
+  phpmyadmin:
+    image: phpmyadmin:5
+    container_name: nsystem-phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_USER: nsystem
+      PMA_PASSWORD: nsystempass
+    ports:
+      - "8081:80"
+    depends_on:
+      - db
+
+volumes:
+  dbdata:
